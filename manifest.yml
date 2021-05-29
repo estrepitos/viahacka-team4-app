@@ -1,5 +1,5 @@
 applications:
-  name: viahacka-team4-app
+- name: viahacka-team4-app
   buildpack: staticfile_buildpack
   host: viahacka-team4-app
   memory: 32M
