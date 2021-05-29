@@ -2,5 +2,6 @@ applications:
 - name: viahacka-team4-app
   buildpack: staticfile_buildpack
   host: viahacka-team4-app
+  instances: 1
   memory: 32M
-  path: dist/apps/viahacka-team4-app/
+  path: dist/apps/viahacka-team4-app
