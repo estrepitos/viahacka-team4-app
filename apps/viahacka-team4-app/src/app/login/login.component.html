@@ -1,7 +1,7 @@
 <form class="p-3 mx-auto m-3" (ngSubmit)="login()">
   <p>
     <label class="form-label" for="loja">Loja: </label>
-    <input class="form-control" type="text" id="loja" />
+    <input class="form-control" type="text" id="loja" [(ngModel)]="loja" name="loja" />
   </p>
   <p>
     <label class="form-label" for="usuario">Usuário ou Email: </label>

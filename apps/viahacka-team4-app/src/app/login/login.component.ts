@@ -9,6 +9,8 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent {
 
+  loja: string;
+
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -19,7 +21,15 @@ export class LoginComponent {
   }
 
   login(): void {
-    this.loginService.login();
+    let loja = 'gemialidades';
+    switch (this.loja) {
+      case '2':
+        loja = 'lojista2';
+        break;
+    }
+
+
+    this.loginService.login(loja);
     this.router.navigate(['']);
   }
 
