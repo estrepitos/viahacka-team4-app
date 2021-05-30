@@ -12,7 +12,11 @@ export class LoginComponent {
   constructor(
     private authGuard: AuthGuard,
     private router: Router
-  ) { }
+  ) {
+    if (this.authGuard.login) {
+      this.router.navigate(['']);
+    }
+  }
 
   login(): void {
     this.authGuard.login = true;

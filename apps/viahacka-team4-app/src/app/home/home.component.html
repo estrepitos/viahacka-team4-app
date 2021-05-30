@@ -1,1 +1,27 @@
-<p>home works!</p>
+<div class="container">
+  <h4 class="d-flex mb-3"><img src="assets/Weasleys_Wizard_Wheezes.jpg" class="border mr-2"> <span>Gemialidades Weasley</span></h4>
+  <div class="d-flex justify-content-between">
+    <div class="d-flex premiacao">
+      <fa-icon [icon]="faTrophy" class="text-secondary h2 align-middle"></fa-icon>
+      <div class="mx-2">
+        Prata
+        <progress class="d-block" id="file" value="75" max="100" ngbTooltip="75/100 ViaCoins" triggers="hover focus click" placement="bottom"> 75% </progress>
+      </div>
+      <fa-icon [icon]="faTrophy" class="text-warning mt-3" ngbTooltip="Consiga ViaCoins para conquistar a categoria Ouro" triggers="hover focus click" placement="bottom"></fa-icon>
+    </div>
+    <div class="avaliacoes text-center">
+      <fa-icon [icon]="faStar" class="text-warning"></fa-icon>
+      <fa-icon [icon]="faStar" class="text-warning"></fa-icon>
+      <fa-icon [icon]="faStar" class="text-warning"></fa-icon>
+      <fa-icon [icon]="faStar" class="text-warning"></fa-icon>
+      <fa-icon [icon]="faStar"></fa-icon>
+      <p>450 avaliações</p>
+    </div>
+  </div>
+
+  <nav class="nav nav-tabs text-center">
+    <a routerLink="../conquistas" class="nav-link w-50 text-dark" routerLinkActive="active bg-light border-bottom-0">Conquistas</a>
+    <a routerLink="../desafios" class="nav-link w-50 text-dark" routerLinkActive="active bg-light border-bottom-0">Desafios</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

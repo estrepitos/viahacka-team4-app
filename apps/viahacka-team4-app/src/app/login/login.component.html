@@ -1,15 +1,17 @@
-<form (ngSubmit)="login()">
+<form class="p-3 mx-auto m-3" (ngSubmit)="login()">
   <p>
-    <label>Loja: </label>
-    <input type="text" name="loja" />
+    <label class="form-label" for="loja">Loja: </label>
+    <input class="form-control" type="text" id="loja" />
   </p>
   <p>
-    <label>Usuário ou Email: </label>
-    <input type="text" name="usuario" />
+    <label class="form-label" for="usuario">Usuário ou Email: </label>
+    <input class="form-control" type="text" id="usuario" />
   </p>
   <p>
-    <label>Senha: </label>
-    <input type="password" name="senha" />
+    <label class="form-label" for="senha">Senha: </label>
+    <input class="form-control" type="password" id="senha" />
   </p>
-  <input type="submit" value="Entrar">
+  <p>
+    <input class="btn btn-dark w-100" type="submit" value="Entrar">
+  </p>
 </form>

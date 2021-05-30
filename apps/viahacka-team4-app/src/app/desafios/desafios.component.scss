@@ -1,0 +1,21 @@
+.desafio {
+  font-size: 0.9rem;
+
+  progress {
+    width: 100%;
+  }
+
+  span {
+    line-height: 1rem;
+  }
+}
+
+.border-danger {
+  border-width: 2px;
+}
+
+.position-absolute {
+  bottom: 0;
+  right: 0;
+  opacity: 0.8;
+}
