@@ -1,27 +1,12 @@
-<div class="card my-3 p-2 desafio border-danger">
-  <div>
-    <label for="progress-1" class="mb-0">Venda 30 produtos em 1 mês</label>
-    <progress id="progress-1" value="28" max="30" ngbTooltip="28/30" triggers="hover focus click" placement="bottom"> {{(28*100)/30}}% </progress>
+<ng-container *ngIf="desafios">
+  <div *ngFor="let desafio of desafios" class="card my-3 p-2 desafio {{ desafio.recompensa_tipo === 'Ranking' ? 'border-danger' : ''}}">
+    <div>
+      <label for="progress-1" class="mb-0">{{desafio.descricao}}</label>
+      <progress id="progress-1" [value]="desafio.progresso" [max]="desafio.total" ngbTooltip="{{desafio.progresso}}/{{desafio.total}}" triggers="hover focus click" placement="bottom"> {{(desafio.progresso*100)/desafio.total}}% </progress>
+    </div>
+    <p class="mb-0 font-weight-bold">Recompensas</p>
+    <p class="mb-0" *ngIf="desafio.recompensa_coins"><fa-icon [icon]="faCoins" class="text-warning"></fa-icon> {{desafio.recompensa_coins}} ViaCoins</p>
+    <p class="mb-0"><fa-icon [icon]="getIcone(desafio.recompensa_tipo)" class="{{ desafio.recompensa_tipo === 'Ranking' ? getClassRanking(desafio.recompensa_descricao) : 'text-success' }} icone"></fa-icon> {{desafio.recompensa_descricao}}</p>
+    <fa-icon *ngIf="desafio.recompensa_tipo === 'Ranking'" [icon]="faExclamationTriangle" class="position-absolute text-danger h2 align-middle mr-2" ngbTooltip="Conclua este desafio para não cair de categoria" triggers="hover focus click" placement="left"></fa-icon>
   </div>
-  <p class="mb-0 font-weight-bold">Recompensas</p>
-  <p class="mb-0"><fa-icon [icon]="faTrophy" class="text-secondary"></fa-icon> Mantenha-se na categoria Prata</p>
-  <fa-icon [icon]="faExclamationTriangle" class="position-absolute text-danger h2 align-middle mr-2" ngbTooltip="Conclua este desafio para não cair de categoria" triggers="hover focus click" placement="left"></fa-icon>
-</div>
-<div class="card my-3 p-2 desafio">
-  <div>
-    <label for="progress-1" class="mb-0">Entregue 30 pedidos sem atraso</label>
-    <progress id="progress-1" value="5" max="30" ngbTooltip="5/30" triggers="hover focus click" placement="bottom"> {{(5*100)/30}}% </progress>
-  </div>
-  <p class="mb-0 font-weight-bold">Recompensas</p>
-  <p class="mb-0"><fa-icon [icon]="faCoins" class="text-warning"></fa-icon> 15 ViaCoins</p>
-  <p class="mb-0"><fa-icon [icon]="faAd" class="text-success"></fa-icon> Busca autocomplete</p>
-</div>
-<div class="card my-3 p-2 desafio">
-  <div>
-    <label for="progress-1" class="mb-0">Cadastre mais 5 produtos</label>
-    <progress id="progress-1" value="4" max="5" ngbTooltip="4/5" triggers="hover focus click" placement="bottom"> {{(4*100)/5}}% </progress>
-  </div>
-  <p class="mb-0 font-weight-bold">Recompensas</p>
-  <p class="mb-0"><fa-icon [icon]="faCoins" class="text-warning"></fa-icon> 10 ViaCoins</p>
-  <p class="mb-0 d-flex"><fa-icon [icon]="faDollarSign" class="text-success mx-1"></fa-icon> <span>10% de desconto nos produtos por 1 dia <small class="text-muted"> (pagos pela VIA)</small></span></p>
-</div>
+</ng-container>

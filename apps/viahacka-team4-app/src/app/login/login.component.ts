@@ -24,12 +24,11 @@ export class LoginComponent {
     let loja = 'gemialidades';
     switch (this.loja) {
       case '2':
-        loja = 'lojista2';
+        loja = 'caldeirao';
         break;
     }
 
-
-    this.loginService.login(loja);
+    this.loginService.login(this.loja, loja);
     this.router.navigate(['']);
   }
 
