@@ -28,7 +28,7 @@ export class LoginComponent {
         break;
     }
 
-    this.loginService.login(this.loja, loja);
+    this.loginService.login(this.loja ? this.loja : '1', loja);
     this.router.navigate(['']);
   }
 
