@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthGuard } from '../auth.guard';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'viahacka-team4-app-login',
@@ -10,16 +10,16 @@ import { AuthGuard } from '../auth.guard';
 export class LoginComponent {
 
   constructor(
-    private authGuard: AuthGuard,
+    private loginService: LoginService,
     private router: Router
   ) {
-    if (this.authGuard.login) {
+    if (this.loginService.isLoggedIn) {
       this.router.navigate(['']);
     }
   }
 
   login(): void {
-    this.authGuard.login = true;
+    this.loginService.login();
     this.router.navigate(['']);
   }
 

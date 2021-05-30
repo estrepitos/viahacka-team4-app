@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { AuthGuard } from './auth.guard';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'viahacka-team4-app-root',
@@ -11,10 +11,10 @@ import { AuthGuard } from './auth.guard';
 export class AppComponent {
   faLogout = faSignOutAlt;
 
-  constructor(public authGuard: AuthGuard, private router: Router) { }
+  constructor(public loginService: LoginService, private router: Router) { }
 
   logout(): void {
-    this.authGuard.login = false;
+    this.loginService.logout();
     this.router.navigate(['login']);
   }
 }

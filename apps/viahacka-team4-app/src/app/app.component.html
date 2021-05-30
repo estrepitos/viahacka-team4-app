@@ -1,10 +1,12 @@
 <header class="nav navbar-dark bg-dark px-3 py-1 mb-3 text-center">
-  <div class="navbar-brand w-100" href="#">
-    <img src="assets/logo_via_institucional_color_darkest.svg" class="d-inline-block align-text-bottom" height="30">
-    Rewards
-    <a class="logout text-light" (click)="logout()" *ngIf="authGuard.login">
-      <fa-icon class="mr-3" [icon]="faLogout"></fa-icon>
-    </a>
+  <div class="navbar-brand w-100">
+    <div class="container">
+      <img src="assets/logo_via_institucional_color_darkest.svg" class="d-inline-block align-text-bottom" height="30">
+      Rewards
+      <a class="logout text-light" (click)="logout()" *ngIf="loginService.isLoggedIn">
+        <fa-icon class="mr-3" [icon]="faLogout"></fa-icon>
+      </a>
+    </div>
   </div>
 </header>
 <router-outlet></router-outlet>
